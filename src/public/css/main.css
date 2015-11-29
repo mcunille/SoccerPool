@@ -60,6 +60,12 @@ body {
   color: #222;
 }
 
+.container-transparent {
+  padding: 20px;
+  background-color: #FFF;
+  opacity: 0.8;
+}
+
 .text-danger {
     margin-top: 2px;
     margin-bottom: 5px;
