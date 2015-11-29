@@ -1,0 +1,296 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,300);
+@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css);
+
+body {
+		background-color: #DDCC66;
+		
+	}
+	
+	
+
+.destacados{
+    padding: 20px 0;
+    text-align: center;
+    
+}
+.destacados > div > div{
+	padding: 10px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	transition: 0.2s;
+}
+.destacados > div:hover > div{
+	margin-top: -10px;
+	border: 1px solid rgb(200, 100, 0);
+	box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 5px 2px;
+	background: rgba(200, 200, 0, 0.5);
+	transition: 0.5s;
+}
+.destacados > div > div > h2 {
+    color: #FFFFFF;
+    
+}
+
+.destacados > div > div > p{
+    color: #000000;
+}
+
+
+.box {
+    border-radius: 3px;
+    box-shadow: 0 2px 5px 0 rgba(0, 100, 0, 1.0), 0 2px 10px 0 rgba(0, 120, 0, 1.0);
+    padding: 10px 25px;
+    text-align: right;
+    display: block;
+    margin-top: 60px;
+    background-color: rgba(50 , 100 , 0 , 0.4);
+
+}
+.box-icon {
+    background-color: #FFaa00;
+    border-radius: 50%;
+    display: table;
+    height: 100px;
+    margin: 0 auto;
+    width: 100px;
+    margin-top: -61px;
+}
+
+.box2 {
+    border-radius: 3px;
+    box-shadow: 0 2px 5px 0 rgba(255, 100, 0, 1.0), 0 2px 10px 0 rgba(255, 120, 0, 1.0);
+    padding: 10px 25px;
+    text-align: right;
+    display: block;
+    margin-top: 60px;
+    background-color: rgba(200 , 100 , 0 , 0.4);
+
+}
+.box-icon2 {
+    background-color: #44CC00;
+    border-radius: 50%;
+    display: table;
+    height: 80px;
+    margin: 0 auto;
+    width: 80px;
+    margin-top: -61px;
+}
+
+
+.boxCamp {
+    border-radius: 3px;
+    box-shadow: 0 2px 5px 0 rgba(255, 200, 0, 1.0), 0 2px 10px 0 rgba(200, 255, 0, 1.0);
+    padding: 10px 25px;
+    text-align: right;
+    display: block;
+    margin-top: 60px;
+    background-color: rgba(0 , 255 , 0 , 0.7);
+
+}
+.box-Camp {
+    background-color: #CCCC00;
+    border-radius: 50%;
+    display: table;
+    height: 80px;
+    margin: 0 auto;
+    width: 80px;
+    margin-top: -61px;
+}
+
+.box-icon span {
+    color: #fff;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+.info h4 {
+    font-size: 26px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+.info > p {
+    color: #FFFFFF;
+    font-size: 16px;
+    padding-top: 10px;
+    text-align: justify;
+}
+.info > ul {
+    color: #FFFFFF;
+    font-size: 16px;
+    padding-top: 10px;
+    text-align: justify;
+}
+.info > a {
+    background-color: #03a9f4;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    color: #fff;
+    transition: all 0.5s ease 0s;
+}
+.info > a:hover {
+    background-color: #0288d1;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.16), 0 2px 5px 0 rgba(0, 0, 0, 0.12);
+    color: #fff;
+    transition: all 0.5s ease 0s;
+}
+
+.card .card-image{
+    overflow: hidden;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+.card .card-image img{
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -ms-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+.card .card-image:hover img{
+    -webkit-transform: scale(1.2) rotate(-7deg);
+    -moz-transform: scale(1.2) rotate(-7deg);
+    -ms-transform: scale(1.2) rotate(-7deg);
+    -o-transform: scale(1.2) rotate(-7deg);
+    transform: scale(1.2) rotate(-7deg);
+}
+
+.card{
+    font-family: 'Roboto', sans-serif; 
+    margin-top: 10px;
+    position: relative;
+    -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 4 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+.card .card-content {
+    padding: 10px;    
+}
+
+.card .card-content .card-title, .card-reveal .card-title{
+    font-size: 24px;
+    font-weight: 200;    
+}
+
+.card .card-action{
+    padding: 20px;
+    border-top: 1px solid rgba(160, 160, 160, 0.2);
+}
+.card .card-action a{
+    font-size: 15px;
+    color: #ffffff;
+    text-transform:uppercase;
+    margin-right: 20px;    
+    -webkit-transition: color 0.3s ease;
+    -moz-transition: color 0.3s ease;
+    -o-transition: color 0.3s ease;
+    -ms-transition: color 0.3s ease;
+    transition: color 0.3s ease;
+}
+.card .card-action a:hover{    
+    color:#ffd8a6;
+    text-decoration:none;
+}
+
+.card .card-reveal{    
+    padding: 20px;
+    position: absolute;
+    background-color: #FFF;
+    width: 100%;
+    overflow-y: auto;
+    /*top: 0;*/
+    left:0;
+    bottom:0;
+    height: 100%;
+    z-index: 1;
+    display: none;    
+}
+
+.card .card-reveal p{
+    color: rgba(0, 0, 0, 0.71);
+    margin:20px ;
+}
+
+.btn-custom{
+    background-color: transparent;
+    font-size:18px;
+}
+
+.navbar-blue{
+    background-color: #92ea75;
+    border-color: #8cf29d;
+}
+
+.navbar-green{
+    background-color: rgba(11,11,11,0.5);
+    border-color: #11111;
+}
+
+.camp-color{
+    color: #235628;
+    
+}
+
+.text-black{
+    color: #000000;
+    font-size: 16px;
+    padding-top: 10px;
+    text-align: justify;
+
+}
+
+
+#sidebar-wrapper {
+  top: 300px;
+  left: -200px;
+  width: 200px;
+  background-color: rgba(11,11,11,0.5);
+  color: white;
+  position: fixed;
+  height: 100%;
+  z-index: 1;
+}
+.sidebar-nav {
+  position: absolute;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  width: 250px;
+  list-style: none;
+}
+.sidebar-nav li {
+  text-indent: 20px;
+  line-height: 50px;
+}
+.sidebar-nav li a {
+  color: white;
+  display: block;
+  text-decoration: none;
+}
+.sidebar-nav li a:hover {
+  background: rgba(255,255,50,0.25);
+  color: white;
+  text-decoration: none;
+}
+.sidebar-nav li a:active, .sidebar-nav li a:focus {
+  text-decoration: none;
+}
+#sidebar-wrapper.sidebar-toggle {
+  transition: all 0.3s ease-out;
+  margin-left: -200px;
+}
+@media (min-width: 768px) {
+  #sidebar-wrapper.sidebar-toggle {
+    transition: 0s;
+    left: 200px;
+  }
+}
+
+
+

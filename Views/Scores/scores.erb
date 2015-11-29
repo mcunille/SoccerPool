@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html lang="es">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="../Content/bootstrap-3.3.4/css/bootstrap.css" rel="stylesheet">
+        <link href="../Content/CSS/main.css" rel="stylesheet">
+        <script src="../../js/openPool.js"></script>
+        <title>Soccer Pool</title>
+    </head>
+    <header id="header">
+       <br>
+       <h1 class="white-text text-center"> Soccer Pool</h1>
+       <br>
+    </header>
+    <br>
+        <div class="navbar navbar-green navbar-fixed">
+            <div class="row"> 
+                    <div class="col-md-offset-3 col-md-2">
+                         <a href="scores.erb" class="btn btn-success navbar-text" role="button">Home</a>
+                    </div>
+                    <div class="col-md-2">
+                         <a href="../Pool/openPool.erb" class="btn btn-success navbar-text text-center" role="button">Pool</a>
+                    </div>
+                    <div class="col-md-2">
+                        <a href="../Pool/results.erb" class="btn btn-success navbar-text" role="button">Matches</a> 
+                    </div>
+                </div>
+            </div>
+    
+	<body id="body">
+     
+    <div class="container">
+        <h2 class="text-h2 text-center bg-success"> Scores </h2>
+		<hr>
+		
+		<div class="container">
+		    	<form action="../../controllers/scores" method="GET" name="frmscores" role="form">
+					<div class="row">
+						<div class="col-md-offset-4 col-md-2">
+							<p class="text-center">User</p>
+						</div>
+						<% @scores.each do |score| %>
+						<div class="col-md-offset-4 col-md-2">
+							<p class="text-center"><%= @scores.score %></p>
+						</div>
+						<% end %>
+					</div>
+					<% @scores.each do |score| %>
+					<table>
+						<tr>
+							<td><%= @scores.score %></td>
+						</tr>
+					</table>
+					<% end %>
+				</form>
+		</div>
+    </body>
+        
+    </html>

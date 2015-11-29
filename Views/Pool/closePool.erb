@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html lang="es">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="../Content/bootstrap-3.3.4/css/bootstrap.css" rel="stylesheet">
+        <link href="../Content/CSS/main.css" rel="stylesheet">
+        <script src="../../js/closePool.js"></script>
+        <title>Soccer Pool</title>
+    </head>
+    <header id="header">
+       <br>
+       <h1 class="white-text text-center fixed"> Soccer Pool</h1>
+       <br>
+    </header>
+        <br>
+        <div class="navbar navbar-green navbar-fixed">
+            <div class="row"> 
+                    <div class="col-md-offset-3 col-md-2">
+                         <a href="../Scores/scores.erb" class="btn btn-success navbar-text" role="button">Home</a>
+                    </div>
+                    <div class="col-md-2">
+                         <a href="#" class="btn btn-success navbar-text text-center" role="button">Pool</a>
+                    </div>
+                    <div class="col-md-2">
+                        <a href="results.erb" class="btn btn-success navbar-text" role="button">Matches</a> 
+                    </div>
+                </div>
+            </div>
+    
+    <body id="body">
+     
+    <div class="container">
+        <h2 class="text-h2 text-center bg-success"> Close Pool </h2>
+		<hr>
+		
+		<div class="container">
+		    <div class="row">
+		        <div class="col-md-offset-4 col-md-4">
+		       		<a href="#" class="btn btn-large btn-danger btn-block" id="btnclose" name="btnclose" onClick="if (! confirm('Are you sure you want to close the actual pool?')) return false;">Close Pool</a>
+		        </div>
+		    </div>
+		</div>
+		
+    </body>
+        
+    </html>
