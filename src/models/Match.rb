@@ -37,6 +37,8 @@ class Match < ActiveRecordModel
   # The match's pool.
   attr_accessor({:pool => "foreign_key@#{Pool.table_name}"})
   
+  @cache = {}
+  
   # Creates a new +Match+ instance.
   #
   # Parameters::

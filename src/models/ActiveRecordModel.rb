@@ -23,10 +23,10 @@ class ActiveRecordModel
   # The table attributes
   @attributes = nil
   
+  @cache = {}
+  
   # The table row ID.
   attr_reader :rowid
-  
-  @cache = {}
   
   def self.attr_accessor(dictionary)
     raise 'Invalid attribute definition for Active Record' if !dictionary.is_a?(Hash)
@@ -107,15 +107,14 @@ class ActiveRecordModel
   #           the given row ID, or +nil+ if not found.
   def self.find(rowid)
     return @cache[rowid] if @cache.has_key?(rowid)
-
     query = "select * from #{ @table_name } where rowid=?"
-    
     row = DATA_BASE.get_first_row(query, [rowid])
     
     if row
       object = yield row
       object.instance_variable_set(:@rowid, rowid)
       @cache[rowid] = object
+      puts @cache
       object
     else
       nil

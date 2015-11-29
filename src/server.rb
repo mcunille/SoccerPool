@@ -17,7 +17,7 @@ begin
   user.save
   puts("saved: #{user}")
 rescue
-  #ignore
+ #ignore
 end
 
 begin
@@ -30,6 +30,23 @@ end
 
 admin = Account.find_by_login("mcunille")
 puts admin
+
 user = Account.find_by_login("dortiz")
 puts user
+
+pool = Pool.new(Pool::OPEN)
+pool.save
+puts pool
+
+match1 = Match.new("A", "B", Match::NO_RESULTS, pool)
+match1.save
+puts match1
+
+match2 = Match.new("C", "D", Match::NO_RESULTS, pool)
+match2.save
+puts match2
+
+Pick.new(user, match1, Match::TIE).save
+Pick.new(user, match2, Match::WINNER_TEAM_A).save
+
 user.picks.each {|e| puts e}

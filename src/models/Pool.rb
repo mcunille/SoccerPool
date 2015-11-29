@@ -21,6 +21,8 @@ class Pool < ActiveRecordModel
   # Whether the pool is open.
   attr_accessor({:open => "integer"})
   
+  @cache = {}
+  
   # Creates a new +Pool+ instance.
   #
   # Parameters::

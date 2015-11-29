@@ -21,6 +21,8 @@ class Pick < ActiveRecordModel
   # The pick's choice.
   attr_accessor({:choice => "integer"})
   
+  @cache = {}
+  
   # Creates a new +Pick+ instance.
   #
   # Parameters::
@@ -46,8 +48,8 @@ class Pick < ActiveRecordModel
   #           the given row ID, or +nil+ if not found.
   def self.find(rowid)
     super(rowid) {|row|
-      account = Account.Find(row[0])
-      match = Match.Find(row[1])
+      account = Account.find(row[0])
+      match = Match.find(row[1])
       Pick.new(account, match, row[2])
     }
   end

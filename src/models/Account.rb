@@ -21,6 +21,8 @@ class Account < ActiveRecordModel
   # The account's role.
   attr_accessor({:role => "text"})
   
+  @cache = {}
+  
   # Creates a new +Account+ instance.
   #
   # Parameters::
@@ -91,7 +93,8 @@ class Account < ActiveRecordModel
             "where #{Account.table_name}.rowid=account_id and account_id=?"
             
     DATA_BASE.execute(query, [rowid]) do |row|
-      result << Pick.find(row[0])
+      pick = Pick.find(row[0])
+      result << pick
     end
     
     result
