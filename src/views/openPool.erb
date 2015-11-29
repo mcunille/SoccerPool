@@ -1,0 +1,58 @@
+<div>
+	<div class="page-title bg-success">
+        <p>Open Pool</p>
+    </div>
+	<div class="container">
+		<div class="col-md-6 col-md-offset-3">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<center><img src="images/messi.jpg" height="140" width="200"></center>
+					<h4 class="text-center">Add the pool's matches:</h4>
+				</div>
+				<div class="panel-body">
+					<% if @error != nil %>
+                        <div class="text-danger">
+                        <%= @error %>
+                        </div>
+                    <% end %>
+					<form class="form-horizontal" action="" method="POST" name="frmmatches" role="form">
+						<div class="form-group">
+							<div id='TextBoxesGroup' class="col-sm-offset-1 col-sm-10 text-center">
+								<div id="TextBoxDiv_1">
+									<input type='textbox' name='textboxA_1' placeholder="Team Name">
+									<label>vs.</label>
+								    <input type='textbox' name='textboxB_1' placeholder="Team Name">
+								</div>
+							</div>
+						</div>
+						<hr>
+						<div class="form-group">
+							<div class="col-sm-offset-1 col-sm-10">
+								<input type='button' class="btn btn-info btn-block" value='Add new match' id='addButton'>
+								<input type='submit' class="btn btn-success btn-block" value='Open pool' id='submit'>
+							</div>
+						</div>
+					</form>
+				</div>
+		   </div>
+		</div>
+	</div>
+</div>
+
+<% content_for :scripts do %>
+	<script type="text/javascript">
+	$(document).ready(function(){
+	    var counter = 2;
+		$("#addButton").click(function() {
+		var newTextBoxDiv = $(document.createElement('div')).attr("id", 'TextBoxDiv_' + counter);
+		newTextBoxDiv.after().html(
+								   '<input type=\'textbox\' name=\'textboxA_' + counter + '\' placeholder="Team Name">' +
+								   '<label>&nbsp;vs.&nbsp;</label>' +
+								   '<input type=\'textbox\' name=\'textboxB_' + counter + '\' placeholder="Team Name">');
+	
+		newTextBoxDiv.appendTo("#TextBoxesGroup");		
+		counter++;
+	    });
+	  });
+	</script>
+<% end %>
