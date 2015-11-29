@@ -99,4 +99,18 @@ class Account < ActiveRecordModel
     
     result
   end
+  
+  # Checks if the given password is valid for
+  # the current account.
+  #
+  # Parameter::
+  #
+  #   password:: The password to be validated.
+  #
+  # Returns:: Whether the password is valid for
+  #           the current account.
+  #
+  def validate_credentials(password)
+    @password == password
+  end
 end

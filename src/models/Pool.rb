@@ -57,6 +57,23 @@ class Pool < ActiveRecordModel
         Pool.new(row[1])}
   end
   
+  # Find a specific pool contained in the database.
+  #
+  # RETURNS:: An instance of the +Pool+ class that
+  #           is open, or +nil+ if not found.
+  def self.find_open
+    query = "select rowid, * from #{Pool.table_name} " +
+            'where open=?'
+            
+    row = DATA_BASE.get_first_row(query, [OPEN])
+    
+    if row
+      pool = Pool.new(row[1])
+      pool.instance_variable_set(:@rowid, row[0])
+      pool
+    end
+  end
+  
   # Returns an array of all the matches that belong to
   # this pool.
   def matches

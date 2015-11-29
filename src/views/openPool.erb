@@ -1,16 +1,19 @@
 <div>
-	<div class="page-title bg-success">
-        <p>Open Pool</p>
-    </div>
 	<div class="container">
 		<div class="col-md-6 col-md-offset-3">
+			<% if @unique_error %>
+				<div class="text-center">
+					<h2>Oops!</h2>
+					<p>It seems that there's an open pool. Why don't you try <a href="/close">closing</a> it first?</p>
+				</div>
+			<% else %>
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<center><img src="images/messi.jpg" height="140" width="200"></center>
 					<h4 class="text-center">Add the pool's matches:</h4>
 				</div>
 				<div class="panel-body">
-					<% if @error != nil %>
+					<% if @error %>
                         <div class="text-danger">
                         <%= @error %>
                         </div>
@@ -35,6 +38,7 @@
 					</form>
 				</div>
 		   </div>
+			<% end %>
 		</div>
 	</div>
 </div>
