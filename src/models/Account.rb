@@ -100,6 +100,17 @@ class Account < ActiveRecordModel
     result
   end
   
+  def pick_by_match(match_id)
+    query = "select rowid from #{Pick.table_name} " +
+            "where account_id=? and match_id=?"
+            
+    row = DATA_BASE.get_first_row(query, [rowid, match_id])
+    
+    if row
+      Pick.find(row[0])
+    end
+  end
+  
   # Checks if the given password is valid for
   # the current account.
   #

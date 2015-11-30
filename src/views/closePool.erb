@@ -1,48 +1,50 @@
-<!DOCTYPE html>
-
-<html lang="es">
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="../Content/bootstrap-3.3.4/css/bootstrap.css" rel="stylesheet">
-        <link href="../Content/CSS/main.css" rel="stylesheet">
-        <script src="../../js/closePool.js"></script>
-        <title>Soccer Pool</title>
-    </head>
-    <header id="header">
-       <br>
-       <h1 class="white-text text-center fixed"> Soccer Pool</h1>
-       <br>
-    </header>
-        <br>
-        <div class="navbar navbar-green navbar-fixed">
-            <div class="row"> 
-                    <div class="col-md-offset-3 col-md-2">
-                         <a href="../Scores/scores.erb" class="btn btn-success navbar-text" role="button">Home</a>
-                    </div>
-                    <div class="col-md-2">
-                         <a href="#" class="btn btn-success navbar-text text-center" role="button">Pool</a>
-                    </div>
-                    <div class="col-md-2">
-                        <a href="results.erb" class="btn btn-success navbar-text" role="button">Matches</a> 
-                    </div>
-                </div>
-            </div>
-    
-    <body id="body">
-     
-    <div class="container">
-        <h2 class="text-h2 text-center bg-success"> Close Pool </h2>
-		<hr>
-		
-		<div class="container">
-		    <div class="row">
-		        <div class="col-md-offset-4 col-md-4">
-		       		<a href="#" class="btn btn-large btn-danger btn-block" id="btnclose" name="btnclose" onClick="if (! confirm('Are you sure you want to close the actual pool?')) return false;">Close Pool</a>
-		        </div>
-		    </div>
-		</div>
-		
-    </body>
-        
-    </html>
+<div class="container">
+	<div class="col-md-6 col-md-offset-3">
+		<% if @error %>
+			<div class="text-center container-transparent">
+				<div class="text-danger">
+					<%= @error %>
+				</div>
+			</div>
+		<% end %>
+		<% if !@pool %>
+			<div class="text-center container-transparent">
+				<h2>Oops!</h2>
+				<p>It seems that there's no open pool to be closed.</p>
+				<p>Why don't you try <a href="/open">opening</a> one first?</p>
+			</div>
+		<% else %>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<center><img src="images/messi.jpg" height="140" width="200"></center>
+				<h4 class="text-center">Pool information:</h4>
+			</div>
+			<div class="panel-body">
+				<form class="form-horizontal" action="" method="POST" name="frmmatches" role="form">
+					<input type='hidden' name='rowid' value=<%= @pool.rowid %>>
+					<div class="form-group">
+						<div id='TextBoxesGroup' class="col-sm-offset-1 col-sm-10 text-center">
+							<% @pool.matches.each do |match| %>
+							<% div_id = "'TextBoxDiv_#{match.rowid}'" %>
+							<% textbox_a_id = "'textboxA_#{match.rowid}'" %>
+							<% textbox_b_id = "'textboxB_#{match.rowid}'" %>
+							<div id=<%= div_id %>>
+								<input type='textbox' name=<%= textbox_a_id %> placeholder="Team Name" readonly value=<%= match.firstTeam %>>
+								<label>vs.</label>
+								<input type='textbox' name=<%= textbox_b_id %> placeholder="Team Name" readonly value=<%= match.secondTeam %>>
+							</div>
+							<% end %>
+						</div>
+					</div>
+					<hr>
+					<div class="form-group">
+						<div class="col-sm-offset-1 col-sm-10">
+							<input type='submit' class="btn btn-danger btn-block" value='Close pool' id='submit' onClick="if (! confirm('Are you sure you want to close the current pool?')) return false;">
+						</div>
+					</div>
+				</form>
+			</div>
+	   </div>
+		<% end %>
+	</div>
+</div>

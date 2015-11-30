@@ -18,7 +18,7 @@ body {
 }
 
 body > .container {
-  padding: 60px 15px 0;
+  padding: 60px 0px 0px;
 }
 .container .text-muted {
   margin: 20px 0;
@@ -61,9 +61,18 @@ body {
 }
 
 .container-transparent {
+  background:rgba(255,255,255,0.8);
   padding: 20px;
-  background-color: #FFF;
-  opacity: 0.8;
+}
+
+.panel-heading-image {
+  height: 100px;
+  width: 100%;
+  background-image: url("../images/soccer-banner.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-color: #222;
 }
 
 .text-danger {

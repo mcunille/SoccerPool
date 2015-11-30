@@ -57,7 +57,7 @@ end
 # GET: /login
 # The login page.
 get '/login' do
-  @viewTitle = "Login"
+  @viewTitle = "Log in"
   erb :login
 end
 
@@ -78,7 +78,7 @@ post '/login' do
     redirect '/'
   end
   
-  @viewTitle = "Login"
+  @viewTitle = "Log in"
   @error = "Wrong username and/or password."
   erb :login
 end
@@ -113,12 +113,10 @@ post '/register' do
   
   if password != password_c
     @error = 'The passwords don\'t match'
-    erb :register
-    return
+    return erb :register
   elsif Account.find_by_login(login)
     @error = 'That login already exists'
-    erb :register
-    return
+    return erb :register
   end
   
   user = Account.new(login, password, 'user')
@@ -133,10 +131,9 @@ get '/open' do
   redirect '/login' if !logged_in?
   protected!
   
-  if Pool.find_open != nil
+  if Pool.find_open != nil || Pool.find_closed != nil
     @unique_error = true
   end
-  
   
   @viewTitle = "New pool"
   erb :openPool
@@ -148,10 +145,9 @@ post '/open' do
  
   @viewTitle = "New pool"
   
-  if Pool.find_open != nil
+  if Pool.find_open != nil || Pool.find_closed != nil
     @unique_error = true
-    erb :openPool
-    return
+    return erb :openPool
   end
  
   pool = Pool.new(Pool::OPEN)
@@ -184,6 +180,7 @@ get '/close' do
   protected!
   
   @viewTitle = "Close pool"
+  @pool = Pool.find_open
   erb :closePool
 end
 
@@ -192,18 +189,18 @@ post '/close' do
   protected!
   
   @viewTitle = "Close pool"
-end
-
-get '/pick' do
-  redirect '/login' if !logged_in?
+  rowid = params[:rowid]
+  pool = Pool.find(rowid)
   
-  @viewTitle = "Make your pick"
-  erb :pick
-end
-
-post '/pick' do
-  redirect '/login' if !logged_in?
-  @viewTitle = "Make your pick"
+  if !pool
+    @error = "Something weird happened. We couldn't find your open pool."
+    return erb :closePool
+  end
+  
+  pool.open = Pool::CLOSED
+  pool.save
+  
+  redirect '/results'
 end
 
 get '/results' do
@@ -211,6 +208,23 @@ get '/results' do
   protected!
   
   @viewTitle = "Match results"
+  @pool = Pool.find_closed
+  @results = {}
+  
+  if @pool
+    @pool.matches.each {|match|
+      html_select =
+                "<select name='result_#{match.rowid}'>\n" +
+                "\t<option value='1'>Winner is #{match.firstTeam}</option>\n" +
+                "\t<option value='0'>It's a tie</option>\n" +
+                "\t<option value='2'>Winner is #{match.secondTeam}</option>\n" +
+                "</select>"
+                
+      @results[match.rowid] = html_select
+    }
+  end
+  
+  erb :results
 end
 
 post '/results' do
@@ -218,15 +232,153 @@ post '/results' do
   protected!
   
   @viewTitle = "Match results"
+  @pool = Pool.find_closed
+  
+  params.each {|param|
+    if param[0].start_with?('result')
+      rowid = param[0].split('_')[1]
+      match = Match.find(rowid)
+      
+      if match == nil
+        @error = "Something weird happened. We couldn't find that match."
+        return erb :results
+      end
+      
+      match.result = param[1]
+      match.save
+    end
+  }
+  
+  @pool.open = Pool::CONCLUDED
+  @pool.save
+  
+  redirect '/scores'
+end
+
+get '/pick' do
+  redirect '/login' if !logged_in?
+  
+  @viewTitle = "Make your pick"
+  @pool = Pool.find_open
+  @picks = {}
+  
+  if !@pool
+    return erb :pick
+  end
+  
+  user = session[:login]
+  user_picks = user.picks
+  
+  @pool.matches.each {|match|
+    html_select =
+                "<select name='result_#{match.rowid}'>\n" +
+                "\t<option value='1' #{'selected' if user_picks.select{ |pick| pick.match.rowid.to_s == match.rowid.to_s && pick.choice.to_s == '1'}.count > 0}>Winner is #{match.firstTeam}</option>\n" +
+                "\t<option value='0' #{'selected' if user_picks.select{ |pick| pick.match.rowid.to_s == match.rowid.to_s && pick.choice.to_s == '0'}.count > 0}>It's a tie</option>\n" +
+                "\t<option value='2' #{'selected' if user_picks.select{ |pick| pick.match.rowid.to_s == match.rowid.to_s && pick.choice.to_s == '2'}.count > 0}>Winner is #{match.secondTeam}</option>\n" +
+                "</select>"
+                
+    @picks[match.rowid] = html_select            
+  }
+  
+  erb :pick
+end
+
+post '/pick' do
+  redirect '/login' if !logged_in?
+  
+  @viewTitle = "Make your pick"
+  @pool = Pool.find_open
+  @picks = {}
+  
+  if !@pool
+    return erb :pick
+  end
+  
+  user = session[:login]
+  
+  params.each {|param|
+    if param[0].start_with?('result')
+      rowid = param[0].split('_')[1]
+      match = Match.find(rowid)
+      
+      if match == nil
+        @error = "Something weird happened. We couldn't find that match."
+        return erb :pick
+      end
+        
+      pick = user.pick_by_match(match.rowid)
+      if pick == nil
+        pick = Pick.new(user, match, Match::NO_RESULTS)
+      end
+        
+      pick.choice = param[1]
+      pick.save
+    end
+    
+    @status = 'We have updated your picks.'
+  }
+  
+  user_picks = user.picks
+  @pool.matches.each {|match|
+    html_select =
+                "<select name='result_#{match.rowid}'>\n" +
+                "\t<option value='1' #{'selected' if user_picks.select{ |pick| pick.match.rowid.to_s == match.rowid.to_s && pick.choice.to_s == '1'}.count > 0}>Winner is #{match.firstTeam}</option>\n" +
+                "\t<option value='0' #{'selected' if user_picks.select{ |pick| pick.match.rowid.to_s == match.rowid.to_s && pick.choice.to_s == '0'}.count > 0}>It's a tie</option>\n" +
+                "\t<option value='2' #{'selected' if user_picks.select{ |pick| pick.match.rowid.to_s == match.rowid.to_s && pick.choice.to_s == '2'}.count > 0}>Winner is #{match.secondTeam}</option>\n" +
+                "</select>"
+                
+    @picks[match.rowid] = html_select            
+  }
+  
+  erb :pick
 end
 
 get '/scores' do
-  redirect '/login' if !logged_in?
   @viewTitle = "Scores"
+  @scores = []
+  
+  pools = Pool.find_all
+  titles = ['User']
+  pools.each {|pool|
+    titles << "P#{pool.rowid}"
+  }
+  titles << "Total"
+  @scores << titles
+  
+  Account.find_all.each {|account|
+    pool_score = Hash.new(0)
+    account.picks.each {|pick|
+      if pick.choice.to_s == pick.match.result.to_s
+        pool_score[pick.match.pool.rowid] += 1
+      end
+    }
+    
+    user_scores = [account.login]
+    pools.each {|pool|
+      user_scores << pool_score[pool.rowid]
+    }
+    
+    user_scores << user_scores.drop(1).reduce(:+)
+    
+    @scores << user_scores
+  }
+  
   erb :scores
 end
 
-post '/scores' do
-  redirect '/login' if !logged_in?
-  @viewTitle = "Scores"
+error 401 do
+  @viewTitle = 'Unauthorized'
+  erb :unauthorized
+end
+
+not_found do
+  status 404
+  @viewTitle = 'Not Found'
+  erb :notfound
+end
+
+error do
+  status 500
+  @viewTitle = 'Internal Server Error'
+  erb :error
 end

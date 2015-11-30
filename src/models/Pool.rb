@@ -15,6 +15,9 @@ class Pool < ActiveRecordModel
   # The pool is closed.
   CLOSED = 0
   
+  # The pool has concluded.
+  CONCLUDED = 2
+  
   # The table name.
   @table_name = 'pools'
   
@@ -66,6 +69,23 @@ class Pool < ActiveRecordModel
             'where open=?'
             
     row = DATA_BASE.get_first_row(query, [OPEN])
+    
+    if row
+      pool = Pool.new(row[1])
+      pool.instance_variable_set(:@rowid, row[0])
+      pool
+    end
+  end
+  
+  # Find a specific pool contained in the database.
+  #
+  # RETURNS:: An instance of the +Pool+ class that
+  #           is closed but not concluded, or +nil+ if not found.
+  def self.find_closed
+    query = "select rowid, * from #{Pool.table_name} " +
+            'where open=?'
+            
+    row = DATA_BASE.get_first_row(query, [CLOSED])
     
     if row
       pool = Pool.new(row[1])

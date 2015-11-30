@@ -1,0 +1,54 @@
+<div class="container">
+	<div class="col-md-6 col-md-offset-3">
+		<% if @error %>
+			<div class="text-center container-transparent">
+				<div class="text-danger">
+					<%= @error %>
+				</div>
+			</div>
+		<% end %>
+		<% if !@pool %>
+			<div class="text-center container-transparent">
+				<h2>Oops!</h2>
+				<p>It seems that there's no closed pool to be concluded.</p>
+				<p>Why don't you try <a href="/close">closing</a> one first?</p>
+			</div>
+		<% else %>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<center><img src="images/messi.jpg" height="140" width="200"></center>
+				<h4 class="text-center">Pool information:</h4>
+			</div>
+			<div class="panel-body">
+				<form class="form-horizontal" action="" method="POST" name="frmmatches" role="form">
+					<input type='hidden' name='rowid' value=<%= @pool.rowid %>>
+					<div class="form-group">
+						<div id='TextBoxesGroup' class="col-sm-offset-1 col-sm-10 text-center">
+							<% @pool.matches.each do |match| %>
+							<% div_id = "'TextBoxDiv_#{match.rowid}'" %>
+							<% textbox_a_id = "'textboxA_#{match.rowid}'" %>
+							<% textbox_b_id = "'textboxB_#{match.rowid}'" %>
+							<div style="margin: 10px 0px;" id=<%= div_id %>>
+								<input type='textbox' name=<%= textbox_a_id %> placeholder="Team Name" readonly value=<%= match.firstTeam %>>
+								<label>vs.</label>
+								<input type='textbox' name=<%= textbox_b_id %> placeholder="Team Name" readonly value=<%= match.secondTeam %>>
+                                <br>
+								<label>Match result</label>
+								<br>
+								<%= @results[match.rowid] %>
+							</div>
+							<% end %>
+						</div>
+					</div>
+					<hr>
+					<div class="form-group">
+						<div class="col-sm-offset-1 col-sm-10">
+							<input type='submit' class="btn btn-danger btn-block" value='Conclude pool' id='submit' onClick="if (! confirm('Are you sure you want to conclude the current pool?')) return false;">
+						</div>
+					</div>
+				</form>
+			</div>
+	   </div>
+		<% end %>
+	</div>
+</div>

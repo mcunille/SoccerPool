@@ -90,8 +90,9 @@ class ActiveRecordModel
       
       DATA_BASE.execute(query, values)
       @rowid = DATA_BASE.get_first_row("select max(rowid) from #{ self.class.table_name }")[0]
-      self.class.cache[rowid] = self
     end
+    
+    self.class.cache[rowid] = self
   end
   
   # Find a specific instance contained in the database.
@@ -114,7 +115,6 @@ class ActiveRecordModel
       object = yield row
       object.instance_variable_set(:@rowid, rowid)
       @cache[rowid] = object
-      puts @cache
       object
     else
       nil
