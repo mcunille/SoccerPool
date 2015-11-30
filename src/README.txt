@@ -39,16 +39,20 @@ Please note that you need to install the following packages to your system:
 
 == Class Diagrams
 
+The following figure represents the UML class diagram for the +SoccerPool+ model and its classes:
+
+link:public/images/class_diagram.png
 
 == Entity Relationship Diagram
 
-
+<em>Entity Relationship Diagram</em> (ERD) 
+link:public/images/entity_relationship_diagram.png
 
 == Deployment Diagram
 
+UML deployment diagrams show a system's physical layout, revealing which pieces of software run on what pieces of hardware. This is the deployment diagram for our application:
 
-
-
+link:public/images/deployment_diagram.png
 
 == Patterns Used
 
@@ -91,7 +95,7 @@ translated to the respective constraint.
 
 == Acknowledgments
 
-To Ariel Ortiz for bein such an excellent professor.
+To Ariel Ortiz for being such an excellent professor.
 
 == References
 
@@ -99,3 +103,4 @@ Mention here any consulted books or web resources. Examples:
 
 - \J. Nunemaker <em> Rails Tips </em> 2008. Available through {http://www.railstips.org/blog/archives/2006/11/18/class-and-instance-variables-in-ruby/}
 
+- Ruby-Doc.org. <em>RDoc Markup Reference.</em> {\http://ruby-doc.org/stdlib-2.2.3/libdoc/rdoc/rdoc/RDoc/Markup.html}[http://ruby-doc.org/stdlib-2.2.3/libdoc/rdoc/rdoc/RDoc/Markup.html#class-RDoc::Markup-label-Block+Markup] Accessed November 28, 2015.

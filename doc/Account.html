@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Account - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>src/models/Account.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="ActiveRecordModel.html">ActiveRecordModel</a>
+  
+</nav>
+
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li class="calls-super" ><a href="#method-c-find">::find</a>
+    
+    <li class="calls-super" ><a href="#method-c-find_all">::find_all</a>
+    
+    <li ><a href="#method-c-find_by_login">::find_by_login</a>
+    
+    <li ><a href="#method-c-new">::new</a>
+    
+    <li ><a href="#method-i-pick_by_match">#pick_by_match</a>
+    
+    <li ><a href="#method-i-picks">#picks</a>
+    
+    <li ><a href="#method-i-validate_credentials">#validate_credentials</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./src/README_txt.html">README</a>
+  
+    <li class="file"><a href="./src/public/bootstrap-3_3_6-dist/fonts/glyphicons-halflings-regular_svg.html">glyphicons-halflings-regular.svg</a>
+  
+    <li class="file"><a href="./src/public/bootstrap-3_3_6-dist/js/bootstrap_js.html">bootstrap.js</a>
+  
+    <li class="file"><a href="./src/public/bootstrap-3_3_6-dist/js/bootstrap_min_js.html">bootstrap.min.js</a>
+  
+    <li class="file"><a href="./src/public/bootstrap-3_3_6-dist/js/npm_js.html">npm.js</a>
+  
+    <li class="file"><a href="./src/public/jquery-1_9_1/jquery-1_9_1_min_js.html">jquery-1.9.1.min.js</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Account.html">Account</a>
+  
+    <li><a href="./ActiveRecordModel.html">ActiveRecordModel</a>
+  
+    <li><a href="./ClassLevelInheritableAttributes.html">ClassLevelInheritableAttributes</a>
+  
+    <li><a href="./ClassLevelInheritableAttributes/ClassMethods.html">ClassLevelInheritableAttributes::ClassMethods</a>
+  
+    <li><a href="./Match.html">Match</a>
+  
+    <li><a href="./Object.html">Object</a>
+  
+    <li><a href="./Pick.html">Pick</a>
+  
+    <li><a href="./Pool.html">Pool</a>
+  
+    <li><a href="./ServerConfig.html">ServerConfig</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Account</h1>
+
+  <div id="description" class="description">
+    
+<p>The <code>Account</code> class is an active record representing a row in
+the <code>accounts</code> table.</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-find" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">find</span><span
+            class="method-args">(rowid)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Find a specific account contained in the database.</p>
+<dl class="rdoc-list note-list"><dt>Parameter
+<dd><dl class="rdoc-list note-list"><dt>rowid
+<dd>
+<p>The row ID of the account to find in the database.</p>
+</dd></dl>
+</dd><dt>Returns
+<dd>
+<p>An instance of the <code>Account</code> class with the given row ID, or
+<code>nil</code> if not found.</p>
+</dd></dl>
+          
+          
+            <div class="method-calls-super">
+              Calls superclass method
+              <a href="ActiveRecordModel.html#method-c-find">ActiveRecordModel.find</a>
+            </div>
+          
+
+          
+          <div class="method-source-code" id="find-source">
+            <pre><span class="ruby-comment"># File src/models/Account.rb, line 49</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">rowid</span>)
+  <span class="ruby-keyword">super</span>(<span class="ruby-identifier">rowid</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">row</span><span class="ruby-operator">|</span>
+    <span class="ruby-constant">Account</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">row</span>[<span class="ruby-value">0</span>], <span class="ruby-identifier">row</span>[<span class="ruby-value">1</span>], <span class="ruby-identifier">row</span>[<span class="ruby-value">2</span>])
+  }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- find-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- find-method -->
+
+    
+      <div id="method-c-find_all" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">find_all</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get all the accounts contained in the database.</p>
+<dl class="rdoc-list note-list"><dt>Returns
+<dd>
+<p>An array with all the accounts currently stored in the
+<code>accounts</code> table.</p>
+</dd></dl>
+          
+          
+            <div class="method-calls-super">
+              Calls superclass method
+              <a href="ActiveRecordModel.html#method-c-find_all">ActiveRecordModel.find_all</a>
+            </div>
+          
+
+          
+          <div class="method-source-code" id="find_all-source">
+            <pre><span class="ruby-comment"># File src/models/Account.rb, line 60</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">find_all</span>
+  <span class="ruby-keyword">super</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">row</span><span class="ruby-operator">|</span>
+      <span class="ruby-constant">Account</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">row</span>[<span class="ruby-value">1</span>], <span class="ruby-identifier">row</span>[<span class="ruby-value">2</span>], <span class="ruby-identifier">row</span>[<span class="ruby-value">3</span>])
+    }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- find_all-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- find_all-method -->
+
+    
+      <div id="method-c-find_by_login" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">find_by_login</span><span
+            class="method-args">(login)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Find a specific account contained in the database.</p>
+<dl class="rdoc-list note-list"><dt>Parameter
+<dd><dl class="rdoc-list note-list"><dt>login
+<dd>
+<p>The login of the account to find in the database.</p>
+</dd></dl>
+</dd><dt>Returns
+<dd>
+<p>An instance of the <code>Account</code> class with the given login, or
+<code>nil</code> if not found.</p>
+</dd></dl>
+          
+          
+
+          
+          <div class="method-source-code" id="find_by_login-source">
+            <pre><span class="ruby-comment"># File src/models/Account.rb, line 75</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">find_by_login</span>(<span class="ruby-identifier">login</span>)
+  <span class="ruby-identifier">query</span> = <span class="ruby-node">&quot;select rowid, * from #{Account.table_name} &quot;</span> <span class="ruby-operator">+</span>
+          <span class="ruby-string">&quot;where login=?&quot;</span>
+          
+  <span class="ruby-identifier">row</span> = <span class="ruby-constant">DATA_BASE</span>.<span class="ruby-identifier">get_first_row</span>(<span class="ruby-identifier">query</span>, [<span class="ruby-identifier">login</span>])
+  
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">row</span>
+    <span class="ruby-identifier">account</span> = <span class="ruby-constant">Account</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">row</span>[<span class="ruby-value">1</span>], <span class="ruby-identifier">row</span>[<span class="ruby-value">2</span>], <span class="ruby-identifier">row</span>[<span class="ruby-value">3</span>])
+    <span class="ruby-identifier">account</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-value">:@rowid</span>, <span class="ruby-identifier">row</span>[<span class="ruby-value">0</span>])
+    <span class="ruby-identifier">account</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- find_by_login-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- find_by_login-method -->
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(login, password, role)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Creates a new <code>Account</code> instance.</p>
+<dl class="rdoc-list note-list"><dt>Parameters
+<dd><dl class="rdoc-list note-list"><dt>login
+<dd>
+<p>The account&#39;s name.</p>
+</dd><dt>password
+<dd>
+<p>The account&#39;s password.</p>
+</dd><dt>role
+<dd>
+<p>The account&#39;s role.</p>
+</dd></dl>
+</dd></dl>
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File src/models/Account.rb, line 33</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">login</span>, <span class="ruby-identifier">password</span>, <span class="ruby-identifier">role</span>)
+  <span class="ruby-ivar">@rowid</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@login</span> = <span class="ruby-identifier">login</span>
+  <span class="ruby-ivar">@password</span> = <span class="ruby-identifier">password</span>
+  <span class="ruby-ivar">@role</span> = <span class="ruby-identifier">role</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-pick_by_match" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">pick_by_match</span><span
+            class="method-args">(match_id)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="pick_by_match-source">
+            <pre><span class="ruby-comment"># File src/models/Account.rb, line 103</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">pick_by_match</span>(<span class="ruby-identifier">match_id</span>)
+  <span class="ruby-identifier">query</span> = <span class="ruby-node">&quot;select rowid from #{Pick.table_name} &quot;</span> <span class="ruby-operator">+</span>
+          <span class="ruby-string">&quot;where account_id=? and match_id=?&quot;</span>
+          
+  <span class="ruby-identifier">row</span> = <span class="ruby-constant">DATA_BASE</span>.<span class="ruby-identifier">get_first_row</span>(<span class="ruby-identifier">query</span>, [<span class="ruby-identifier">rowid</span>, <span class="ruby-identifier">match_id</span>])
+  
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">row</span>
+    <span class="ruby-constant">Pick</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">row</span>[<span class="ruby-value">0</span>])
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- pick_by_match-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- pick_by_match-method -->
+
+    
+      <div id="method-i-picks" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">picks</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns an array of all the picks that belong to this account.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="picks-source">
+            <pre><span class="ruby-comment"># File src/models/Account.rb, line 90</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">picks</span>
+  <span class="ruby-identifier">result</span> = []
+  <span class="ruby-identifier">query</span> = <span class="ruby-node">&quot;select #{Pick.table_name}.rowid from #{Pick.table_name}, #{Account.table_name} &quot;</span> <span class="ruby-operator">+</span>
+          <span class="ruby-node">&quot;where #{Account.table_name}.rowid=account_id and account_id=?&quot;</span>
+          
+  <span class="ruby-constant">DATA_BASE</span>.<span class="ruby-identifier">execute</span>(<span class="ruby-identifier">query</span>, [<span class="ruby-identifier">rowid</span>]) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">row</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">pick</span> = <span class="ruby-constant">Pick</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">row</span>[<span class="ruby-value">0</span>])
+    <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">pick</span>
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- picks-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- picks-method -->
+
+    
+      <div id="method-i-validate_credentials" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">validate_credentials</span><span
+            class="method-args">(password)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Checks if the given password is valid for the current account.</p>
+<dl class="rdoc-list note-list"><dt>Parameter
+<dd><dl class="rdoc-list note-list"><dt>password
+<dd>
+<p>The password to be validated.</p>
+</dd></dl>
+</dd><dt>Returns
+<dd>
+<p>Whether the password is valid for the current account.</p>
+</dd></dl>
+          
+          
+
+          
+          <div class="method-source-code" id="validate_credentials-source">
+            <pre><span class="ruby-comment"># File src/models/Account.rb, line 124</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">validate_credentials</span>(<span class="ruby-identifier">password</span>)
+  <span class="ruby-ivar">@password</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">password</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- validate_credentials-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- validate_credentials-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 4.0.0.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

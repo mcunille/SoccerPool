@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Pool - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>src/models/Pool.rb
+    <li>src/server_start.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="ActiveRecordModel.html">ActiveRecordModel</a>
+  
+</nav>
+
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li class="calls-super" ><a href="#method-c-find">::find</a>
+    
+    <li class="calls-super" ><a href="#method-c-find_all">::find_all</a>
+    
+    <li ><a href="#method-c-find_closed">::find_closed</a>
+    
+    <li ><a href="#method-c-find_open">::find_open</a>
+    
+    <li ><a href="#method-c-new">::new</a>
+    
+    <li ><a href="#method-i-matches">#matches</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./src/README_txt.html">README</a>
+  
+    <li class="file"><a href="./src/public/bootstrap-3_3_6-dist/fonts/glyphicons-halflings-regular_svg.html">glyphicons-halflings-regular.svg</a>
+  
+    <li class="file"><a href="./src/public/bootstrap-3_3_6-dist/js/bootstrap_js.html">bootstrap.js</a>
+  
+    <li class="file"><a href="./src/public/bootstrap-3_3_6-dist/js/bootstrap_min_js.html">bootstrap.min.js</a>
+  
+    <li class="file"><a href="./src/public/bootstrap-3_3_6-dist/js/npm_js.html">npm.js</a>
+  
+    <li class="file"><a href="./src/public/jquery-1_9_1/jquery-1_9_1_min_js.html">jquery-1.9.1.min.js</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Account.html">Account</a>
+  
+    <li><a href="./ActiveRecordModel.html">ActiveRecordModel</a>
+  
+    <li><a href="./ClassLevelInheritableAttributes.html">ClassLevelInheritableAttributes</a>
+  
+    <li><a href="./ClassLevelInheritableAttributes/ClassMethods.html">ClassLevelInheritableAttributes::ClassMethods</a>
+  
+    <li><a href="./Match.html">Match</a>
+  
+    <li><a href="./Object.html">Object</a>
+  
+    <li><a href="./Pick.html">Pick</a>
+  
+    <li><a href="./Pool.html">Pool</a>
+  
+    <li><a href="./ServerConfig.html">ServerConfig</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Pool</h1>
+
+  <div id="description" class="description">
+    
+<p>The <code>Pool</code> class is an active record representing a row in the
+<code>pools</code> table.</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="CLOSED">CLOSED
+        
+        <dd class="description"><p>The pool is closed.</p>
+        
+      
+        <dt id="CONCLUDED">CONCLUDED
+        
+        <dd class="description"><p>The pool has concluded.</p>
+        
+      
+        <dt id="OPEN">OPEN
+        
+        <dd class="description"><p>The pool is open.</p>
+        
+      
+      </dl>
+    </section>
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-find" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">find</span><span
+            class="method-args">(rowid)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Find a specific pool contained in the database.</p>
+<dl class="rdoc-list note-list"><dt>Parameter
+<dd><dl class="rdoc-list note-list"><dt>rowid
+<dd>
+<p>The row ID of the pool to find in the database.</p>
+</dd></dl>
+</dd><dt>Returns
+<dd>
+<p>An instance of the <code>Pool</code> class with the given row ID, or
+<code>nil</code> if not found.</p>
+</dd></dl>
+          
+          
+            <div class="method-calls-super">
+              Calls superclass method
+              <a href="ActiveRecordModel.html#method-c-find">ActiveRecordModel.find</a>
+            </div>
+          
+
+          
+          <div class="method-source-code" id="find-source">
+            <pre><span class="ruby-comment"># File src/models/Pool.rb, line 48</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">rowid</span>)
+  <span class="ruby-keyword">super</span>(<span class="ruby-identifier">rowid</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">row</span><span class="ruby-operator">|</span>
+    <span class="ruby-constant">Pool</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">row</span>[<span class="ruby-value">0</span>])}
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- find-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- find-method -->
+
+    
+      <div id="method-c-find_all" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">find_all</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get all the pools contained in the database.</p>
+<dl class="rdoc-list note-list"><dt>Returns
+<dd>
+<p>An array with all the pools currently stored in the <code>pools</code>
+table.</p>
+</dd></dl>
+          
+          
+            <div class="method-calls-super">
+              Calls superclass method
+              <a href="ActiveRecordModel.html#method-c-find_all">ActiveRecordModel.find_all</a>
+            </div>
+          
+
+          
+          <div class="method-source-code" id="find_all-source">
+            <pre><span class="ruby-comment"># File src/models/Pool.rb, line 58</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">find_all</span>
+  <span class="ruby-keyword">super</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">row</span><span class="ruby-operator">|</span>
+      <span class="ruby-constant">Pool</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">row</span>[<span class="ruby-value">1</span>])}
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- find_all-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- find_all-method -->
+
+    
+      <div id="method-c-find_closed" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">find_closed</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Find a specific pool contained in the database.</p>
+<dl class="rdoc-list note-list"><dt>RETURNS
+<dd>
+<p>An instance of the <code>Pool</code> class that is closed but not
+concluded, or <code>nil</code> if not found.</p>
+</dd></dl>
+          
+          
+
+          
+          <div class="method-source-code" id="find_closed-source">
+            <pre><span class="ruby-comment"># File src/models/Pool.rb, line 84</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">find_closed</span>
+  <span class="ruby-identifier">query</span> = <span class="ruby-node">&quot;select rowid, * from #{Pool.table_name} &quot;</span> <span class="ruby-operator">+</span>
+          <span class="ruby-string">&#39;where open=?&#39;</span>
+          
+  <span class="ruby-identifier">row</span> = <span class="ruby-constant">DATA_BASE</span>.<span class="ruby-identifier">get_first_row</span>(<span class="ruby-identifier">query</span>, [<span class="ruby-constant">CLOSED</span>])
+  
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">row</span>
+    <span class="ruby-identifier">pool</span> = <span class="ruby-constant">Pool</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">row</span>[<span class="ruby-value">1</span>])
+    <span class="ruby-identifier">pool</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-value">:@rowid</span>, <span class="ruby-identifier">row</span>[<span class="ruby-value">0</span>])
+    <span class="ruby-identifier">pool</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- find_closed-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- find_closed-method -->
+
+    
+      <div id="method-c-find_open" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">find_open</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Find a specific pool contained in the database.</p>
+<dl class="rdoc-list note-list"><dt>RETURNS
+<dd>
+<p>An instance of the <code>Pool</code> class that is open, or
+<code>nil</code> if not found.</p>
+</dd></dl>
+          
+          
+
+          
+          <div class="method-source-code" id="find_open-source">
+            <pre><span class="ruby-comment"># File src/models/Pool.rb, line 67</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">find_open</span>
+  <span class="ruby-identifier">query</span> = <span class="ruby-node">&quot;select rowid, * from #{Pool.table_name} &quot;</span> <span class="ruby-operator">+</span>
+          <span class="ruby-string">&#39;where open=?&#39;</span>
+          
+  <span class="ruby-identifier">row</span> = <span class="ruby-constant">DATA_BASE</span>.<span class="ruby-identifier">get_first_row</span>(<span class="ruby-identifier">query</span>, [<span class="ruby-constant">OPEN</span>])
+  
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">row</span>
+    <span class="ruby-identifier">pool</span> = <span class="ruby-constant">Pool</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">row</span>[<span class="ruby-value">1</span>])
+    <span class="ruby-identifier">pool</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-value">:@rowid</span>, <span class="ruby-identifier">row</span>[<span class="ruby-value">0</span>])
+    <span class="ruby-identifier">pool</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- find_open-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- find_open-method -->
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(open = CLOSED)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Creates a new <code>Pool</code> instance.</p>
+<dl class="rdoc-list note-list"><dt>Parameters
+<dd><dl class="rdoc-list note-list"><dt>open
+<dd>
+<p>Whether the pool is open.</p>
+</dd></dl>
+</dd></dl>
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File src/models/Pool.rb, line 34</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">open</span> = <span class="ruby-constant">CLOSED</span>)
+  <span class="ruby-ivar">@rowid</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@open</span> = <span class="ruby-identifier">open</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-matches" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">matches</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns an array of all the matches that belong to this pool.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="matches-source">
+            <pre><span class="ruby-comment"># File src/models/Pool.rb, line 99</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">matches</span>
+  <span class="ruby-identifier">result</span> = []
+  <span class="ruby-identifier">query</span> = <span class="ruby-node">&quot;select #{Match.table_name}.rowid from #{Match.table_name}, #{Pool.table_name} &quot;</span> <span class="ruby-operator">+</span>
+          <span class="ruby-node">&quot;where #{Pool.table_name}.rowid=pool_id and pool_id=?&quot;</span>
+          
+  <span class="ruby-constant">DATA_BASE</span>.<span class="ruby-identifier">execute</span>(<span class="ruby-identifier">query</span>, [<span class="ruby-identifier">rowid</span>]) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">row</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Match</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">row</span>[<span class="ruby-value">0</span>])
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- matches-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- matches-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 4.0.0.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

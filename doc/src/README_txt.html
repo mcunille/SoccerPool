@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>README - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body class="file">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  
+<div id="table-of-contents">
+  <nav class="section">
+    <h3 class="section-header">Table of Contents</h3>
+    <ul>
+      <li><a href="#label-Application+Design+and+Architecture">Application Design and Architecture</a>
+      <li><a href="#label-Installing+and+Running+the+Application">Installing and Running the Application</a>
+      <li><a href="#label-Class+Diagrams">Class Diagrams</a>
+      <li><a href="#label-Entity+Relationship+Diagram">Entity Relationship Diagram</a>
+      <li><a href="#label-Deployment+Diagram">Deployment Diagram</a>
+      <li><a href="#label-Patterns+Used">Patterns Used</a>
+      <li><a href="#label-Acknowledgments">Acknowledgments</a>
+      <li><a href="#label-References">References</a>
+    </ul>
+  </nav>
+</div>
+
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../src/README_txt.html">README</a>
+  
+    <li class="file"><a href="../src/public/bootstrap-3_3_6-dist/fonts/glyphicons-halflings-regular_svg.html">glyphicons-halflings-regular.svg</a>
+  
+    <li class="file"><a href="../src/public/bootstrap-3_3_6-dist/js/bootstrap_js.html">bootstrap.js</a>
+  
+    <li class="file"><a href="../src/public/bootstrap-3_3_6-dist/js/bootstrap_min_js.html">bootstrap.min.js</a>
+  
+    <li class="file"><a href="../src/public/bootstrap-3_3_6-dist/js/npm_js.html">npm.js</a>
+  
+    <li class="file"><a href="../src/public/jquery-1_9_1/jquery-1_9_1_min_js.html">jquery-1.9.1.min.js</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Account.html">Account</a>
+  
+    <li><a href="../ActiveRecordModel.html">ActiveRecordModel</a>
+  
+    <li><a href="../ClassLevelInheritableAttributes.html">ClassLevelInheritableAttributes</a>
+  
+    <li><a href="../ClassLevelInheritableAttributes/ClassMethods.html">ClassLevelInheritableAttributes::ClassMethods</a>
+  
+    <li><a href="../Match.html">Match</a>
+  
+    <li><a href="../Object.html">Object</a>
+  
+    <li><a href="../Pick.html">Pick</a>
+  
+    <li><a href="../Pool.html">Pool</a>
+  
+    <li><a href="../ServerConfig.html">ServerConfig</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation" class="description">
+  
+<h1 id="label-Application+Design+and+Architecture">Application Design and Architecture<span><a href="#label-Application+Design+and+Architecture">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+<dl class="rdoc-list note-list"><dt>Authors
+<dd>
+<p>Daniela Ortiz Rodríguez Mauricio Cunillé Blando</p>
+</dd><dt>Date
+<dd>
+<p>November 30, 2015</p>
+</dd></dl>
+
+<p>The directory structure for the application and its documentation is as
+follows:</p>
+
+<pre>SoccerPool/
+      ├─ doc/                                 Folder produced by RDoc.
+      └─ src/                                 Folder for the application&#39;s source code.
+           ├─ public/                         Folder for the server&#39;s public documents.
+           │       └─ css/                    Folder for the application&#39;s CSS files.
+           │       └─ bootstrap-3.3.6-dist/   Folder for the application&#39;s bootstrap files.
+           │       └─ images/                 Folder for the application&#39;s images.
+           │       └─ jquery-1.9.1/           Folder for the application&#39;s jquery files.
+           ├─ models/                         Folder for the application&#39;s models.
+           └─ views/                          Folder for the application&#39;s views (ERB files).</pre>
+
+<p>This is the command used to produce this documentation (running it from the
+<code>SoccerPool</code> directory):</p>
+
+<pre>rdoc --exclude &quot;.json|.css&quot; src</pre>
+
+<p>The root of the documentation should now be available at:
+<code>SoccerPool/doc/index.html</code></p>
+
+<h2 id="label-Installing+and+Running+the+Application">Installing and Running the Application<span><a href="#label-Installing+and+Running+the+Application">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<p>To run the <em>SoccerPool</em> web server you only need to type the
+following command at the terminal from the <code>SoccerPool/src</code>
+directory:</p>
+
+<pre>ruby server_start.rb</pre>
+
+<p>Afterwards, point your web brower at the following URL: [<a
+href="http://localhost:4567">localhost:4567</a>]</p>
+
+<p>Please note that you need to install the following packages to your system:</p>
+
+<pre>sudo apt-get install ruby-dev ruby-sqlite3 ruby-sinatra ri2.1
+sudo gem install sinatra-contrib</pre>
+
+<h2 id="label-Class+Diagrams">Class Diagrams<span><a href="#label-Class+Diagrams">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<p>The following figure represents the UML class diagram for the
+<code>SoccerPool</code> model and its classes:</p>
+
+<p><img src="../public/images/class_diagram.png" /></p>
+
+<h2 id="label-Entity+Relationship+Diagram">Entity Relationship Diagram<span><a href="#label-Entity+Relationship+Diagram">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<p><em>Entity Relationship Diagram</em> (ERD)  <img
+src="../public/images/entity_relationship_diagram.png" /></p>
+
+<h2 id="label-Deployment+Diagram">Deployment Diagram<span><a href="#label-Deployment+Diagram">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<p>UML deployment diagrams show a system&#39;s physical layout, revealing
+which pieces of software run on what pieces of hardware. This is the
+deployment diagram for our application:</p>
+
+<p><img src="../public/images/deployment_diagram.png" /></p>
+
+<h2 id="label-Patterns+Used">Patterns Used<span><a href="#label-Patterns+Used">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<ul><li>
+<p><strong> Active Record </strong>:</p>
+</li></ul>
+
+<p>We use the active record pattern in order to do and object-relational
+mapping and access to the SQLite database. The <code>Account</code> class
+is an active record model representing a row in the accounts table. The
+<code>ActiveRecordModel</code> is an active record template representing a
+row in it&#39;s child table. It has all the needed information for managing
+a table, inserting and updating objects and getting records. The
+<code>Pool</code> class is an active record representing a row in the pools
+table. The <code>Pick</code> class is an active record representing a row
+in the picks table.  The <code>Match</code> class is an active record
+representing a row in the matches table.</p>
+<ul><li>
+<p><strong> Domain-Specific Language</strong>:</p>
+</li></ul>
+
+<p>The <code>server_start.rb</code> file consists of a series of Sinatra
+<em>routes</em>. Sinatra is a DSL for creating web applications in Ruby.</p>
+<ul><li>
+<p><strong> Model-View-Controller</strong>:</p>
+</li></ul>
+
+<p>The application follows the classical web implementation of the MVC
+architectural pattern. The models (<code>.rb</code> files) and views
+(<code>.erb</code> files) are stored in the corresponding
+<code>models</code> and <code>views</code> directories. The controllers can
+be found on the <code>server_start.rb</code> file since we aren&#39;t using
+a modular implementation of Sinatra.</p>
+<ul><li>
+<p><strong> Metaprogramming </strong>:</p>
+</li></ul>
+
+<p>The <code>ActiveRecordModel</code> class uses ruby&#39;s metaprogramming in
+order to achieve its active record functionallity. It overrides the
+attr_accesor method and stores a list of the attributes being defined on
+the child class. These attributes are then used to create the database
+table. The update method also uses metaprogramming in order to access the
+instance variables and their values. Metaprogramming is what makes the
+<code>ActiveRecordModel</code> class generic.</p>
+<ul><li>
+<p><strong> Singleton </strong>:</p>
+</li></ul>
+
+<p>The <code>server_config.rb</code> file has a class <a
+href="../ServerConfig.html">ServerConfig</a> that is a singleton class
+representing the server configuration. It mostly includes the database name
+used in the <code>ActiveRecordModel</code> class.</p>
+<ul><li>
+<p><strong> Iterator </strong>:</p>
+</li></ul>
+
+<p>This pattern is used every time we iterate on an array of variables. It is
+also used on the <code>find</code> methods in the active record pattern as
+a helper to the strategy pattern for building an instance of the
+child&#39;s object.</p>
+<ul><li>
+<p><strong> Strategy </strong>:</p>
+</li></ul>
+
+<p>The strategy pattern is used briefly while getting elements through the
+active record pattern. Since the <code>ActiveRecordModel</code> class is
+generic, it doesn&#39;t know how to build the instances of the objects
+being returned by the database. We use the strategy pattern in order to
+provide the block capable of translating a table row into an instance of
+the desired class.</p>
+<ul><li>
+<p><strong> Template </strong>:</p>
+</li></ul>
+
+<p>The <code>ActiveRecordModel</code> is a template that is used through
+inheritance. Once a class inherits from it and implements the desired
+methods, the class is capable of behaving as an active record model.</p>
+<ul><li>
+<p><strong> Convention over configuration </strong>:</p>
+</li></ul>
+
+<p>We briefly use convention over configuration when defining the attributes
+inside an <code>ActiveRecordModel</code> sub-class. Since the create_table
+method needs information such as column type and constraints, the
+attr_accesor method was overriden and instead of using a symbol, a
+dictionary must be provided to define an attribute. The dictionary is
+defined as {symbol =&gt; column_attributes} where the column_attributes can
+define from “text” datatype to a special “foreignkey@table_name” that is
+translated to the respective constraint.</p>
+
+<h2 id="label-Acknowledgments">Acknowledgments<span><a href="#label-Acknowledgments">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<p>To Ariel Ortiz for being such an excellent professor.</p>
+
+<h2 id="label-References">References<span><a href="#label-References">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<p>Mention here any consulted books or web resources. Examples:</p>
+<ul><li>
+<p>J. Nunemaker <em> Rails Tips </em> 2008. Available through {<a
+href="http://www.railstips.org/blog/archives/2006/11/18/class-and-instance-variables-in-ruby">www.railstips.org/blog/archives/2006/11/18/class-and-instance-variables-in-ruby</a>/}</p>
+</li><li>
+<p>Ruby-Doc.org. <em>RDoc Markup Reference.</em> <a
+href="http://ruby-doc.org/stdlib-2.2.3/libdoc/rdoc/rdoc/RDoc/Markup.html#class-RDoc::Markup-label-Block+Markup">http://ruby-doc.org/stdlib-2.2.3/libdoc/rdoc/rdoc/RDoc/Markup.html</a>
+Accessed November 28, 2015.</p>
+</li></ul>
+
+</div>
+
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 4.0.0.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

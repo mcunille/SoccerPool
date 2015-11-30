@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class ActiveRecordModel - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>src/models/ActiveRecordModel.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="Object.html">Object</a>
+  
+</nav>
+
+    <!-- Included Modules -->
+<nav id="includes-section" class="section">
+  <h3 class="section-header">Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><a class="include" href="ClassLevelInheritableAttributes.html">ClassLevelInheritableAttributes</a>
+  
+  
+  </ul>
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li class="calls-super" ><a href="#method-c-attr_accessor">::attr_accessor</a>
+    
+    <li ><a href="#method-c-create_table">::create_table</a>
+    
+    <li ><a href="#method-c-find">::find</a>
+    
+    <li ><a href="#method-c-find_all">::find_all</a>
+    
+    <li ><a href="#method-i-save">#save</a>
+    
+    <li ><a href="#method-i-to_s">#to_s</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./src/README_txt.html">README</a>
+  
+    <li class="file"><a href="./src/public/bootstrap-3_3_6-dist/fonts/glyphicons-halflings-regular_svg.html">glyphicons-halflings-regular.svg</a>
+  
+    <li class="file"><a href="./src/public/bootstrap-3_3_6-dist/js/bootstrap_js.html">bootstrap.js</a>
+  
+    <li class="file"><a href="./src/public/bootstrap-3_3_6-dist/js/bootstrap_min_js.html">bootstrap.min.js</a>
+  
+    <li class="file"><a href="./src/public/bootstrap-3_3_6-dist/js/npm_js.html">npm.js</a>
+  
+    <li class="file"><a href="./src/public/jquery-1_9_1/jquery-1_9_1_min_js.html">jquery-1.9.1.min.js</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Account.html">Account</a>
+  
+    <li><a href="./ActiveRecordModel.html">ActiveRecordModel</a>
+  
+    <li><a href="./ClassLevelInheritableAttributes.html">ClassLevelInheritableAttributes</a>
+  
+    <li><a href="./ClassLevelInheritableAttributes/ClassMethods.html">ClassLevelInheritableAttributes::ClassMethods</a>
+  
+    <li><a href="./Match.html">Match</a>
+  
+    <li><a href="./Object.html">Object</a>
+  
+    <li><a href="./Pick.html">Pick</a>
+  
+    <li><a href="./Pool.html">Pool</a>
+  
+    <li><a href="./ServerConfig.html">ServerConfig</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class ActiveRecordModel</h1>
+
+  <div id="description" class="description">
+    
+<p>The <code>ActiveRecordModel</code> class is an active record template
+representing a row in the <code>child</code> table.</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-rowid" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">rowid</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>The table row ID.</p>
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-attr_accessor" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">attr_accessor</span><span
+            class="method-args">(dictionary)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+            <div class="method-calls-super">
+              Calls superclass method
+              
+            </div>
+          
+
+          
+          <div class="method-source-code" id="attr_accessor-source">
+            <pre><span class="ruby-comment"># File src/models/ActiveRecordModel.rb, line 31</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">attr_accessor</span>(<span class="ruby-identifier">dictionary</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-string">&#39;Invalid attribute definition for Active Record&#39;</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">dictionary</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>)
+  <span class="ruby-ivar">@attributes</span> <span class="ruby-operator">||=</span> {}
+  <span class="ruby-ivar">@attributes</span>.<span class="ruby-identifier">merge!</span>(<span class="ruby-identifier">dictionary</span>)
+  <span class="ruby-identifier">vars</span> = <span class="ruby-identifier">dictionary</span>.<span class="ruby-identifier">map</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">v</span>[<span class="ruby-value">0</span>] }
+  <span class="ruby-keyword">super</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">vars</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- attr_accessor-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- attr_accessor-method -->
+
+    
+      <div id="method-c-create_table" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">create_table</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Create the table only if it doesn&#39;t exist.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="create_table-source">
+            <pre><span class="ruby-comment"># File src/models/ActiveRecordModel.rb, line 41</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">create_table</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-string">&#39;Invalid attributes&#39;</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@attributes</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-string">&#39;Invalid table name&#39;</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@table_name</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">nil</span>
+  
+  <span class="ruby-identifier">constraints</span> = <span class="ruby-string">&quot;&quot;</span>
+  <span class="ruby-identifier">query</span> = <span class="ruby-node">&quot;create table if not exists #{ @table_name } (&quot;</span> <span class="ruby-operator">+</span>
+                    <span class="ruby-ivar">@attributes</span>.<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">a</span><span class="ruby-operator">|</span>
+                      <span class="ruby-keyword">if</span> <span class="ruby-identifier">a</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">start_with?</span>(<span class="ruby-string">&#39;foreign_key&#39;</span>)
+                        <span class="ruby-identifier">constraints</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;, foreign key(#{a[0]}_id) references #{a[1].split(&#39;@&#39;)[1]}(rowid)&quot;</span>
+                        <span class="ruby-node">&quot;#{a[0]}_id integer&quot;</span>
+                      <span class="ruby-keyword">else</span>
+                        <span class="ruby-node">&quot;#{a[0]} #{a[1]}&quot;</span>
+                      <span class="ruby-keyword">end</span>
+                      }.<span class="ruby-identifier">join</span>(<span class="ruby-string">&#39;, &#39;</span>) <span class="ruby-operator">+</span>
+                    <span class="ruby-node">&quot; #{constraints})&quot;</span>
+  
+  <span class="ruby-constant">DATA_BASE</span>.<span class="ruby-identifier">execute</span>(<span class="ruby-identifier">query</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- create_table-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- create_table-method -->
+
+    
+      <div id="method-c-find" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">find</span><span
+            class="method-args">(rowid) { |row| ... }</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Find a specific instance contained in the database.</p>
+
+<p>Must pass a block that creates the <code>child</code> object.</p>
+<dl class="rdoc-list note-list"><dt>Parameter
+<dd><dl class="rdoc-list note-list"><dt>rowid
+<dd>
+<p>The row ID of the instance to find in the database.</p>
+</dd></dl>
+</dd><dt>Returns
+<dd>
+<p>An array of the row with the given row ID, or <code>nil</code> if not
+found.</p>
+</dd></dl>
+          
+          
+
+          
+          <div class="method-source-code" id="find-source">
+            <pre><span class="ruby-comment"># File src/models/ActiveRecordModel.rb, line 109</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">rowid</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-ivar">@cache</span>[<span class="ruby-identifier">rowid</span>] <span class="ruby-keyword">if</span> <span class="ruby-ivar">@cache</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">rowid</span>)
+  <span class="ruby-identifier">query</span> = <span class="ruby-node">&quot;select * from #{ @table_name } where rowid=?&quot;</span>
+  <span class="ruby-identifier">row</span> = <span class="ruby-constant">DATA_BASE</span>.<span class="ruby-identifier">get_first_row</span>(<span class="ruby-identifier">query</span>, [<span class="ruby-identifier">rowid</span>])
+  
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">row</span>
+    <span class="ruby-identifier">object</span> = <span class="ruby-keyword">yield</span> <span class="ruby-identifier">row</span>
+    <span class="ruby-identifier">object</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-value">:@rowid</span>, <span class="ruby-identifier">rowid</span>)
+    <span class="ruby-ivar">@cache</span>[<span class="ruby-identifier">rowid</span>] = <span class="ruby-identifier">object</span>
+    <span class="ruby-identifier">object</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- find-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- find-method -->
+
+    
+      <div id="method-c-find_all" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">find_all</span><span
+            class="method-args">() { |row| ... }</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get all the instances contained in the database.</p>
+
+<p>Must pass a block that creates the <code>child</code> object.</p>
+<dl class="rdoc-list note-list"><dt>Returns
+<dd>
+<p>An array with all the instances currently stored in the <code>child</code>
+table.</p>
+</dd></dl>
+          
+          
+
+          
+          <div class="method-source-code" id="find_all-source">
+            <pre><span class="ruby-comment"># File src/models/ActiveRecordModel.rb, line 131</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">find_all</span>
+  <span class="ruby-identifier">result</span> = []
+  
+  <span class="ruby-identifier">query</span> = <span class="ruby-node">&quot;select rowid, * from #{ @table_name }&quot;</span>
+  
+  <span class="ruby-constant">DATA_BASE</span>.<span class="ruby-identifier">execute</span>(<span class="ruby-identifier">query</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">row</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">rowid</span> = <span class="ruby-identifier">row</span>[<span class="ruby-value">0</span>]
+    <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@cache</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">rowid</span>)
+      <span class="ruby-identifier">object</span> = <span class="ruby-keyword">yield</span> <span class="ruby-identifier">row</span>
+      <span class="ruby-identifier">object</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-value">:@rowid</span>, <span class="ruby-identifier">rowid</span>)
+      <span class="ruby-ivar">@cache</span>[<span class="ruby-identifier">rowid</span>] = <span class="ruby-identifier">object</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-ivar">@cache</span>[<span class="ruby-identifier">rowid</span>]
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- find_all-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- find_all-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-save" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">save</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Saves the state of this instance.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="save-source">
+            <pre><span class="ruby-comment"># File src/models/ActiveRecordModel.rb, line 61</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">save</span>
+  <span class="ruby-identifier">values</span> = []
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">attribute</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">ivar_value</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">instance_variable_get</span> <span class="ruby-node">&quot;@#{attribute[0]}&quot;</span>
+    
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">attribute</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">start_with?</span>(<span class="ruby-string">&#39;foreign_key&#39;</span>)
+      <span class="ruby-identifier">ivar_value</span> = <span class="ruby-identifier">ivar_value</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">nil</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">ivar_value</span>.<span class="ruby-identifier">rowid</span>
+    <span class="ruby-keyword">end</span>
+    
+    <span class="ruby-identifier">values</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">ivar_value</span>
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@rowid</span>
+    <span class="ruby-identifier">values</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-ivar">@rowid</span>
+    <span class="ruby-identifier">query</span> = <span class="ruby-node">&quot;update #{ self.class.table_name } set &quot;</span> <span class="ruby-operator">+</span>
+                      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+                        <span class="ruby-keyword">if</span> <span class="ruby-identifier">v</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">start_with?</span>(<span class="ruby-string">&#39;foreign_key&#39;</span>)
+                          <span class="ruby-node">&quot;#{v[0]}_id=?&quot;</span>
+                        <span class="ruby-keyword">else</span>  
+                          <span class="ruby-node">&quot;#{v[0]}=?&quot;</span>
+                        <span class="ruby-keyword">end</span>
+                        }.<span class="ruby-identifier">join</span>(<span class="ruby-string">&#39;, &#39;</span>) <span class="ruby-operator">+</span>
+                      <span class="ruby-string">&#39; where rowid=?&#39;</span>
+                      
+    <span class="ruby-constant">DATA_BASE</span>.<span class="ruby-identifier">execute</span>(<span class="ruby-identifier">query</span>, <span class="ruby-identifier">values</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">query</span> = <span class="ruby-node">&quot;insert into #{ self.class.table_name } values (&quot;</span> <span class="ruby-operator">+</span>
+                      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-string">&quot;?&quot;</span>}.<span class="ruby-identifier">join</span>(<span class="ruby-string">&#39;, &#39;</span>) <span class="ruby-operator">+</span>
+                      <span class="ruby-string">&#39;)&#39;</span>
+    
+    <span class="ruby-constant">DATA_BASE</span>.<span class="ruby-identifier">execute</span>(<span class="ruby-identifier">query</span>, <span class="ruby-identifier">values</span>)
+    <span class="ruby-ivar">@rowid</span> = <span class="ruby-constant">DATA_BASE</span>.<span class="ruby-identifier">get_first_row</span>(<span class="ruby-node">&quot;select max(rowid) from #{ self.class.table_name }&quot;</span>)[<span class="ruby-value">0</span>]
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">cache</span>[<span class="ruby-identifier">rowid</span>] = <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- save-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- save-method -->
+
+    
+      <div id="method-i-to_s" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_s</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get a string containing the representation for this object.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="to_s-source">
+            <pre><span class="ruby-comment"># File src/models/ActiveRecordModel.rb, line 150</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_s</span>
+  <span class="ruby-identifier">inspect</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- to_s-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- to_s-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 4.0.0.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+
