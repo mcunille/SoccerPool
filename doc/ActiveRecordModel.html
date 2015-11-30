@@ -2,72 +2,71 @@
 
 <html>
 <head>
-<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta charset="UTF-8">
 
 <title>class ActiveRecordModel - RDoc Documentation</title>
 
-<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+<link href="./fonts.css" rel="stylesheet">
+<link href="./rdoc.css" rel="stylesheet">
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "./";
 </script>
 
-<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
-<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
-<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
-<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
-<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
-<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+<script src="./js/jquery.js"></script>
+<script src="./js/navigation.js"></script>
+<script src="./js/search_index.js"></script>
+<script src="./js/search.js"></script>
+<script src="./js/searcher.js"></script>
+<script src="./js/darkfish.js"></script>
 
 
-<body id="top" class="class">
-<nav id="metadata">
-  <nav id="home-section" class="section">
-  <h3 class="section-header">
-    <a href="./index.html">Home</a>
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
     <a href="./table_of_contents.html#classes">Classes</a>
     <a href="./table_of_contents.html#methods">Methods</a>
-  </h3>
-</nav>
+  </div>
+</div>
 
-
-  <nav id="search-section" class="section project-section" class="initially-hidden">
+    <div id="search-section" role="search" class="project-section initially-hidden">
   <form action="#" method="get" accept-charset="utf-8">
-    <h3 class="section-header">
-      <input type="text" name="search" placeholder="Search" id="search-field"
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
              title="Type to search, Up and Down to navigate, Enter to load">
-    </h3>
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
   </form>
+</div>
 
-  <ul id="search-results" class="initially-hidden"></ul>
-</nav>
-
+  </div>
 
   
-
-  <div id="file-metadata">
-    <nav id="file-list-section" class="section">
-  <h3 class="section-header">Defined In</h3>
-  <ul>
-    <li>src/models/ActiveRecordModel.rb
-  </ul>
-</nav>
-
-    
-  </div>
 
   <div id="class-metadata">
     
-    <nav id="parent-class-section" class="section">
-  <h3 class="section-header">Parent</h3>
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
   
   <p class="link"><a href="Object.html">Object</a>
   
-</nav>
+</div>
 
-    <!-- Included Modules -->
-<nav id="includes-section" class="section">
-  <h3 class="section-header">Included Modules</h3>
+    <div id="includes-section" class="nav-section">
+  <h3>Included Modules</h3>
 
   <ul class="link-list">
   
@@ -76,14 +75,14 @@
   
   
   </ul>
-</nav>
+</div>
 
     
     <!-- Method Quickref -->
-<nav id="method-list-section" class="section">
-  <h3 class="section-header">Methods</h3>
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
 
-  <ul class="link-list">
+  <ul class="link-list" role="directory">
     
     <li class="calls-super" ><a href="#method-c-attr_accessor">::attr_accessor</a>
     
@@ -98,69 +97,22 @@
     <li ><a href="#method-i-to_s">#to_s</a>
     
   </ul>
-</nav>
-
-  </div>
-
-  <div id="project-metadata">
-    <nav id="fileindex-section" class="section project-section">
-  <h3 class="section-header">Pages</h3>
-
-  <ul>
-  
-    <li class="file"><a href="./src/README_txt.html">README</a>
-  
-    <li class="file"><a href="./src/public/bootstrap-3_3_6-dist/fonts/glyphicons-halflings-regular_svg.html">glyphicons-halflings-regular.svg</a>
-  
-    <li class="file"><a href="./src/public/bootstrap-3_3_6-dist/js/bootstrap_js.html">bootstrap.js</a>
-  
-    <li class="file"><a href="./src/public/bootstrap-3_3_6-dist/js/bootstrap_min_js.html">bootstrap.min.js</a>
-  
-    <li class="file"><a href="./src/public/bootstrap-3_3_6-dist/js/npm_js.html">npm.js</a>
-  
-    <li class="file"><a href="./src/public/jquery-1_9_1/jquery-1_9_1_min_js.html">jquery-1.9.1.min.js</a>
-  
-  </ul>
-</nav>
-
-    <nav id="classindex-section" class="section project-section">
-  <h3 class="section-header">Class and Module Index</h3>
-
-  <ul class="link-list">
-  
-    <li><a href="./Account.html">Account</a>
-  
-    <li><a href="./ActiveRecordModel.html">ActiveRecordModel</a>
-  
-    <li><a href="./ClassLevelInheritableAttributes.html">ClassLevelInheritableAttributes</a>
-  
-    <li><a href="./ClassLevelInheritableAttributes/ClassMethods.html">ClassLevelInheritableAttributes::ClassMethods</a>
-  
-    <li><a href="./Match.html">Match</a>
-  
-    <li><a href="./Object.html">Object</a>
-  
-    <li><a href="./Pick.html">Pick</a>
-  
-    <li><a href="./Pool.html">Pool</a>
-  
-    <li><a href="./ServerConfig.html">ServerConfig</a>
-  
-  </ul>
-</nav>
+</div>
 
   </div>
 </nav>
 
-<div id="documentation">
-  <h1 class="class">class ActiveRecordModel</h1>
+<main role="main" aria-labelledby="class-ActiveRecordModel">
+  <h1 id="class-ActiveRecordModel" class="class">
+    class ActiveRecordModel
+  </h1>
 
-  <div id="description" class="description">
+  <section class="description">
     
 <p>The <code>ActiveRecordModel</code> class is an active record template
 representing a row in the <code>child</code> table.</p>
 
-  </div><!-- description -->
+  </section>
 
   
   
@@ -173,9 +125,10 @@ representing a row in the <code>child</code> table.</p>
     
 
     
-    <!-- Attributes -->
-    <section id="attribute-method-details" class="method-section section">
-      <h3 class="section-header">Attributes</h3>
+    <section class="attribute-method-details" class="method-section">
+      <header>
+        <h3>Attributes</h3>
+      </header>
 
       
       <div id="attribute-i-rowid" class="method-detail">
@@ -191,13 +144,14 @@ representing a row in the <code>child</code> table.</p>
         </div>
       </div>
       
-    </section><!-- attribute-method-details -->
+    </section>
     
 
-    <!-- Methods -->
     
-     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
-      <h3 class="section-header">Public Class Methods</h3>
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
 
     
       <div id="method-c-attr_accessor" class="method-detail ">
@@ -232,14 +186,14 @@ representing a row in the <code>child</code> table.</p>
   <span class="ruby-identifier">vars</span> = <span class="ruby-identifier">dictionary</span>.<span class="ruby-identifier">map</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">v</span>[<span class="ruby-value">0</span>] }
   <span class="ruby-keyword">super</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">vars</span>)
 <span class="ruby-keyword">end</span></pre>
-          </div><!-- attr_accessor-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- attr_accessor-method -->
+      </div>
 
     
       <div id="method-c-create_table" class="method-detail ">
@@ -280,14 +234,14 @@ representing a row in the <code>child</code> table.</p>
   
   <span class="ruby-constant">DATA_BASE</span>.<span class="ruby-identifier">execute</span>(<span class="ruby-identifier">query</span>)
 <span class="ruby-keyword">end</span></pre>
-          </div><!-- create_table-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- create_table-method -->
+      </div>
 
     
       <div id="method-c-find" class="method-detail ">
@@ -336,14 +290,14 @@ found.</p>
     <span class="ruby-keyword">nil</span>
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
-          </div><!-- find-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- find-method -->
+      </div>
 
     
       <div id="method-c-find_all" class="method-detail ">
@@ -389,20 +343,22 @@ table.</p>
   <span class="ruby-keyword">end</span>
   <span class="ruby-identifier">result</span>
 <span class="ruby-keyword">end</span></pre>
-          </div><!-- find_all-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- find_all-method -->
+      </div>
 
     
-    </section><!-- public-class-method-details -->
+    </section>
   
-     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
-      <h3 class="section-header">Public Instance Methods</h3>
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
 
     
       <div id="method-i-save" class="method-detail ">
@@ -461,14 +417,14 @@ table.</p>
   
   <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">cache</span>[<span class="ruby-identifier">rowid</span>] = <span class="ruby-keyword">self</span>
 <span class="ruby-keyword">end</span></pre>
-          </div><!-- save-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- save-method -->
+      </div>
 
     
       <div id="method-i-to_s" class="method-detail ">
@@ -494,26 +450,25 @@ table.</p>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">to_s</span>
   <span class="ruby-identifier">inspect</span>
 <span class="ruby-keyword">end</span></pre>
-          </div><!-- to_s-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- to_s-method -->
+      </div>
 
     
-    </section><!-- public-instance-method-details -->
+    </section>
   
-  </section><!-- 5Buntitled-5D -->
+  </section>
+</main>
 
-</div><!-- documentation -->
 
-
-<footer id="validator-badges">
-  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
-  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 4.0.0.
-  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 

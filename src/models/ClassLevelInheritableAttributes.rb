@@ -9,7 +9,9 @@ module ClassLevelInheritableAttributes
     base.extend(ClassMethods)    
   end
   
+  # Represents class methods
   module ClassMethods
+    # Sets the inheritable attributes
     def inheritable_attributes(*args)
       @inheritable_attributes ||= [:inheritable_attributes]
       @inheritable_attributes += args
@@ -21,6 +23,7 @@ module ClassLevelInheritableAttributes
       @inheritable_attributes
     end
     
+    # Sets the value of those attributes that are inherited.
     def inherited(subclass)
       @inheritable_attributes.each do |inheritable_attribute|
         instance_var = "@#{inheritable_attribute}"

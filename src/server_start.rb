@@ -12,6 +12,7 @@ require_relative 'models/Pool'
 
 ### Helper methods ###
 helpers do
+  # Requires authentication and admin authorization
   def protected!
     return if authorized?
     halt 401, "Not authorized\n"
@@ -139,6 +140,12 @@ get '/open' do
   erb :openPool
 end
 
+# POST: /open
+#
+# Parameter::
+#
+#   firstTeam:: The first team name for the match.
+#   secondTeam:: The second team name for the match.
 post '/open' do
   redirect '/login' if !logged_in?
   protected!
@@ -175,6 +182,7 @@ post '/open' do
   redirect '/close'
 end
 
+# GET: /close
 get '/close' do
   redirect '/login' if !logged_in?
   protected!
@@ -184,6 +192,11 @@ get '/close' do
   erb :closePool
 end
 
+# POST: /close
+#
+# Parameters::
+#
+#   rowid:: The pool that will be closed.
 post '/close' do
   redirect '/login' if !logged_in?
   protected!
@@ -203,6 +216,7 @@ post '/close' do
   redirect '/results'
 end
 
+# GET: /results
 get '/results' do
   redirect '/login' if !logged_in?
   protected!
@@ -227,6 +241,7 @@ get '/results' do
   erb :results
 end
 
+# POST: /results
 post '/results' do
   redirect '/login' if !logged_in?
   protected!
@@ -255,6 +270,7 @@ post '/results' do
   redirect '/scores'
 end
 
+# GET: /pick
 get '/pick' do
   redirect '/login' if !logged_in?
   
@@ -283,6 +299,7 @@ get '/pick' do
   erb :pick
 end
 
+# POST: /pick
 post '/pick' do
   redirect '/login' if !logged_in?
   
@@ -333,6 +350,7 @@ post '/pick' do
   erb :pick
 end
 
+# GET: /scores
 get '/scores' do
   @viewTitle = "Scores"
   @scores = []
@@ -370,17 +388,20 @@ get '/scores' do
   erb :scores
 end
 
+# Handler for 401 errors.
 error 401 do
   @viewTitle = 'Unauthorized'
   erb :unauthorized
 end
 
+# Handler for 404 errors.
 not_found do
   status 404
   @viewTitle = 'Not Found'
   erb :notfound
 end
 
+# Handler for 500 errors.
 error do
   status 500
   @viewTitle = 'Internal Server Error'

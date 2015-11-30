@@ -1,7 +1,6 @@
 = Application Design and Architecture
 
-Authors::    Daniela Ortiz Rodríguez
-             Mauricio Cunillé Blando
+Authors::    Daniela Ortiz Rodríguez & Mauricio Cunillé Blando
 Date::       November 30, 2015
 
 The directory structure for the application and its documentation is as follows:
@@ -20,7 +19,7 @@ The directory structure for the application and its documentation is as follows:
 
 This is the command used to produce this documentation (running it from the +SoccerPool+ directory):
 
-  rdoc --exclude ".json|.css" src
+  rdoc --exclude ".json|.css|.js|.svg" src
 
 The root of the documentation should now be available at: +SoccerPool/doc/index.html+
 
@@ -41,18 +40,19 @@ Please note that you need to install the following packages to your system:
 
 The following figure represents the UML class diagram for the +SoccerPool+ model and its classes:
 
-link:public/images/class_diagram.png
+link:/images/class_diagram.jpg
 
 == Entity Relationship Diagram
 
-<em>Entity Relationship Diagram</em> (ERD) 
-link:public/images/entity_relationship_diagram.png
+The following figure represents the Entity Relationship diagram for the +SoccerPool+ database:
+
+link:/images/er_diagram.jpg
 
 == Deployment Diagram
 
 UML deployment diagrams show a system's physical layout, revealing which pieces of software run on what pieces of hardware. This is the deployment diagram for our application:
 
-link:public/images/deployment_diagram.png
+link:/images/deployment_diagram.jpg
 
 == Patterns Used
 

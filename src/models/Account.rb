@@ -100,6 +100,14 @@ class Account < ActiveRecordModel
     result
   end
   
+  # Find a specific pick contained in the database.
+  #
+  # Parameter::
+  #
+  #   match_id:: The id of the match associated with the pick.
+  #
+  # Returns:: An instance of the +Pick+ class with the given
+  #           match id, or +nil+ if not found.
   def pick_by_match(match_id)
     query = "select rowid from #{Pick.table_name} " +
             "where account_id=? and match_id=?"
