@@ -345,6 +345,8 @@ get '/scores' do
   titles << "Total"
   @scores << titles
   
+  score_data = []
+  
   Account.find_all.each {|account|
     pool_score = Hash.new(0)
     account.picks.each {|pick|
@@ -358,10 +360,12 @@ get '/scores' do
       user_scores << pool_score[pool.rowid]
     }
     
-    user_scores << user_scores.drop(1).reduce(:+)
+    user_scores << user_scores.drop(1).reduce(0, :+)
     
-    @scores << user_scores
+    score_data << user_scores
   }
+  
+  @scores += score_data.sort{ |x, y| x.last <=> y.last }.reverse
   
   erb :scores
 end
